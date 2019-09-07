@@ -54,6 +54,24 @@ SETTINGS = {
         "django_otp.plugins.otp_static",
         "django_otp.plugins.otp_totp",
     ],
+    "PIPELINE": {
+        "COMPILERS": ("portal.pipeline_compilers.LibSassCompiler",),
+        "CSS": {
+            "css": {
+                "source_filenames": (
+                    "portal/sass/bootstrap.scss",
+                    "portal/sass/colorbox.scss",
+                    "portal/sass/styles.scss",
+                ),
+                "output_filename": "portal.css",
+            },
+            "base": {
+                "source_filenames": ("portal/sass/old_styles.scss",),
+                "output_filename": "base.css",
+            },
+        },
+        "CSS_COMPRESSOR": None,
+    },
     "PIPELINE_COMPILERS": ("portal.pipeline_compilers.LibSassCompiler",),
     "PIPELINE_CSS": {
         "css": {
